@@ -63,14 +63,14 @@ function loadSection(type) {
         return;
     }
 
-    if (type === "test") {
+    if (type === "rapidfire") {
 
         if (
-            typeof loadTestSection ===
+            typeof loadRapidfireSection ===
             "function"
         ) {
 
-            loadTestSection();
+            loadRapidfireSection();
         }
 
         return;
@@ -161,7 +161,7 @@ function openItem(section, file) {
                 AppState.currentQuizData = data;
             }
 
-            if (section === "test") {
+            if (section === "rapidfire") {
                 AppState.currentTestData = data;
             }
 
@@ -210,13 +210,21 @@ function openItem(section, file) {
              }
 
 
-            if (section === "test") {
+            if (section === "rapidfire") {
 
-               AppState.currentTestFile = file;
+               AppState.currentRapidfireFile = file;
 
-                AppState.testState = AppState.testState || { status: {} };
+                AppState.rapidfireState = AppState.rapidfireState || { status: {} };
 
-                setTimeout(() => renderTestQuestions(), 0);
+                AppState.currentRapidfireState = {
+                    data: data,
+                    status: {}
+                };
+
+               document.querySelector(".welcome-title").style.display = "none";
+               document.querySelector(".work-area").style.display = "flex";
+
+                setTimeout(() => renderRapidfireQuestions(), 0);
             }
 
             if (section === "evaluation") {

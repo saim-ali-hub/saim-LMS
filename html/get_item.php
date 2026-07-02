@@ -7,7 +7,7 @@ function respond($data, $code = 200) {
     exit;
 }
 
-$allowed_sections = ['quiz','lab','test','evaluation','recording'];
+$allowed_sections = ['quiz','lab','rapidfire','evaluation','recording'];
 
 $section = basename($_GET['section'] ?? '');
 $file = basename($_GET['file'] ?? '');

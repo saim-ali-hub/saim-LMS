@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Rapid fire 1 - Hardware, Out-of-Band Mgt Port, RAID",
+        "file": "rapidfire1.json"
+    },
+    {
+        "name": "Rapid fire 2 - VMware",
+        "file": "rapidfire2.json"
+    }
+]
