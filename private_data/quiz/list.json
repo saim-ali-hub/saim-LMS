@@ -26,5 +26,13 @@
     {
         "name": "Quiz 7 – VMware Virtualization Fundamentals",
         "file": "quiz7.json"
-    }
+    },
+    {
+        "name": "Quiz 8 – Introduction to Cloud",
+        "file": "quiz8.json"
+    },
+    {
+        "name": "Quiz 9 – AWS & Cloud Computing",
+        "file": "quiz9.json"
+    },
 ]
