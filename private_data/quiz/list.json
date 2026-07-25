@@ -43,6 +43,10 @@
         "name": "Quiz 11 - AWS Billing, CloudWatch & EC2 Fundamentals",
         "file": "quiz11.json"
     },
+    {
+        "name": "Quiz 12 - AWS IAM & MFA",
+        "file": "quiz12.json"
+    },
 ]
 
 
