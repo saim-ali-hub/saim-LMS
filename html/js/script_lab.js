@@ -17,7 +17,7 @@ function loadLabSection() {
     itemList.innerHTML = "<li>Loading labs...</li>";
 
     fetch("get_item.php?section=lab&file=list.json")
-        .then(res => res.json())      
+        .then(res => res.json())
         .then(data => {
 
             if (!Array.isArray(data)) {
@@ -54,6 +54,8 @@ function loadLabSection() {
 ========================= */
 function renderLabQuestions() {
 
+    console.log("NEW LAB RENDER FUNCTION LOADED");
+
     const data = AppState.currentLabState?.data;
     const state = AppState.currentLabState?.status || {};
 
@@ -65,9 +67,48 @@ function renderLabQuestions() {
     let html = `
         <div class="question-box">
 
-            <h2 style="color:#000080;">${data.title || "Lab"}</h2>
-            <h2 style="color:#000080;">${data.description || ""}</h2>
-            <h3 style="color:red;">${data.instructions || ""}</h3>
+        <h2 style="color:#000080;">${data.title || "Lab"}</h2>
+        <h2 style="color:#000080;">
+        ${escapeHtml(data.description || "")}
+        </h2>
+
+        ${
+        data.lab_objective
+
+        ?
+
+        `
+
+        <div style="background:#e0f2fe;color:#0f172a;padding:15px;border-radius:8px;margin-bottom:20px;">
+
+        <h3>
+        ${escapeHtml(data.lab_objective.description)}
+        </h3>
+
+        <ul>
+
+        ${
+        (data.lab_objective.objectives || [])
+        .map(obj =>
+        `
+        <li>${escapeHtml(obj)}</li>
+        `
+        )
+        .join("")
+        }
+
+        </ul>
+
+        </div>
+
+        `
+
+        :
+
+        ""
+
+        }
+
     `;
 
     if (Array.isArray(data.commands_covered)) {
@@ -94,7 +135,34 @@ function renderLabQuestions() {
                  <div style="padding:12px;margin-bottom:12px;border-radius:8px;background:#1e293b;color:white;border-left:4px solid ${borderColor}">
 
                 <div style="padding:12px;margin-bottom:12px;background:#1e293b;color:white;">
-                    Q${index + 1}. ${escapeHtml(q)}
+
+                <h3 style="color:#38bdf8;">
+                Task ${q.task_number}: ${escapeHtml(q.title)}
+                </h3>
+
+                ${
+                Array.isArray(q.steps)
+                ?
+                `
+                <ul style="line-height:1.8;">
+                ${
+                q.steps.map(step =>
+                `
+                <li>${escapeHtml(step)}</li>
+                `
+                ).join("")
+
+                }
+                </ul>
+                `
+
+                :
+
+                ""
+
+                }
+
+
                 </div>
                 <div>
                     <button onclick="setStatus(${index}, 'done')"
@@ -112,6 +180,16 @@ function renderLabQuestions() {
             </div>
         `;
     });
+
+    html += `
+
+        <div style="margin-top:20px;padding:15px;background:#065f46;color:white;border-radius:8px;font-size:18px;">
+
+        ${escapeHtml(data.completion_message || "")}
+
+        </div>
+
+        `;
 
     html += `
         <button onclick="validateLab()"
@@ -153,7 +231,7 @@ function validateLab() {
     body: JSON.stringify({
         lab: AppState.currentLabFile,
 })
-    
+
 })
     .then(res => res.text())
     .then(data => {
@@ -161,7 +239,7 @@ function validateLab() {
           <div style="padding:20px;background:#0f172a;color:#ffffff;min-height:200px;border-radius:8px">
 
                 <h2 style="color:#38bdf8;">LAB RESULT</h2>
-                <pre style="white-space:pre-wrap;color:#ffffff;background:#111827;padding:10px;               
+                <pre style="white-space:pre-wrap;color:#ffffff;background:#111827;padding:10px;
                         border-radius:6px;overflow:auto;">${data}</pre>
               <br>
               <button onclick="goBack()"
