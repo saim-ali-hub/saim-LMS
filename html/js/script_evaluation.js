@@ -107,16 +107,24 @@ function renderEvaluationQuestions() {
 
         <div style="background:white;margin-bottom:18px;border-radius:10px;overflow:hidden;box-shadow:0 3px 8px rgba(0,0,0,.15);">
 
-        <div onclick="toggleSection('${sectionId}')" style="background:${color};color:white;padding:16px 20px;cursor:pointer;
-        display:flex;justify-content:space-between;align-items:center;font-size:21px;font-weight:bold;">
-
+        <div
+        onclick="toggleSection('${sectionId}')"
+        style=" background:${color};color:white;padding:16px 20px;cursor:pointer;transition:all .25s ease;display:flex;justify-content:space-between;
+        align-items:center;font-size:21px;font-weight:bold;
+        "
+        onmouseover="this.style.filter='brightness(110%)'"
+        onmouseout="this.style.filter='brightness(100%)'"
+        >
         <div>
 
         <span
             id="${sectionId}_icon"
+            class="evaluation-icon"
             style="
+                display:inline-block;
                 margin-right:12px;
                 font-size:18px;
+                transition:transform .35s ease;
             ">
             ▶
         </span>
@@ -134,7 +142,11 @@ function renderEvaluationQuestions() {
 
         </div>
 
-        <div id="${sectionId}"style="display:none;padding:20px;background:#ffffff;">
+        <div id="${sectionId}"
+        style="max-height:0;overflow:hidden;padding-left:20px;padding-right:20px;padding-top:0;padding-bottom:0;background:#ffffff;
+        transition:max-height .45s ease,padding .35s ease;"
+        class="evaluation-body"
+        >
         `;
 
         section.questions.forEach(q => {
@@ -232,19 +244,51 @@ function renderEvaluationQuestions() {
 
 function toggleSection(id) {
 
+    const sections = document.querySelectorAll(".evaluation-body");
+    const icons = document.querySelectorAll(".evaluation-icon");
+
+    sections.forEach(section => {
+
+        if (section.id !== id) {
+            section.style.maxHeight = "0px";
+            section.style.paddingTop = "0px";
+            section.style.paddingBottom = "0px";
+        }
+
+    });
+
+    icons.forEach(icon => {
+
+        if (icon.id !== id + "_icon") {
+            icon.style.transform = "rotate(0deg)";
+            icon.innerHTML = "▶";
+        }
+
+    });
+
     const body = document.getElementById(id);
     const icon = document.getElementById(id + "_icon");
 
     if (!body || !icon) return;
 
-    const hidden = window.getComputedStyle(body).display === "none";
+    if (body.style.maxHeight && body.style.maxHeight !== "0px") {
 
-    if (hidden) {
-        body.style.display = "block";
-        icon.innerHTML = "▼";
-    } else {
-        body.style.display = "none";
+        body.style.maxHeight = "0px";
+        body.style.paddingTop = "0px";
+        body.style.paddingBottom = "0px";
+
         icon.innerHTML = "▶";
+        icon.style.transform = "rotate(0deg)";
+
+    } else {
+
+        body.style.maxHeight = body.scrollHeight + "px";
+        body.style.paddingTop = "20px";
+        body.style.paddingBottom = "20px";
+
+        icon.innerHTML = "▼";
+        icon.style.transform = "rotate(90deg)";
+
     }
 }
 
