@@ -1,36 +1,137 @@
 {
-    "title": "Rapid fire 1 - Hardware, Out-of-Band Mgt Port, RAID",
-    "description": "VMware Virtualization Interview Questions",
-    "questions": [
-        "What is virtualization?",
-        "What is a Virtual Machine (VM)?",
-        "What is a Hypervisor?",
-        "What are the types of hypervisors?",
-        "What is VMware ESXi?",
-        "What is vCenter Server?",
-        "Can ESXi work without vCenter?",
-        "What is the difference between ESXi and vCenter?",
-        "What file extension does a VMware virtual disk use?",
-        "What is the file extension of a VM configuration file?",
-        "What is vMotion?",
-        "What are the basic requirements for vMotion?",
-        "What is Storage vMotion?",
-        "What is the difference between vMotion and Storage vMotion?",
-        "What is High Availability (HA)?",
-        "What is Distributed Resource Scheduler (DRS)?",
-        "What is a datastore?",
-        "What is VMFS?",
-        "What is the difference between Thick Provisioning and Thin Provisioning?",
-        "What is a VMware snapshot?",
-        "Can snapshots replace backups?",
-        "What happens if snapshots remain for a long time?",
-        "What is the difference between a Standard Switch and a Distributed Switch?",
-        "What are Port Groups?",
-        "What is the difference between local storage and shared storage?",
-        "What are the different types of shared storage?",
-        "What is Multipathing?",
-        "What command do you use to check multipathing in Linux?",
-        "What is the difference between HA and FT?",
-        "Walk me through the process of putting an ESXi host into Maintenance Mode."
-    ]
+  "rapidfire_id": "rapidfire2",
+  "title": "Rapid Fire 2 - Virtualization",
+  "description": "VMware Virtualization, ESXi, Vcenter, VMotion, DRS, HA & FT",
+
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "VMware Virtualization Interview Questions",
+      "questions": [
+        {
+          "question_number": 1,
+          "question": "What is virtualization?"
+        },
+        {
+          "question_number": 2,
+          "question": "What is a Virtual Machine (VM)?"
+        },
+        {
+          "question_number": 3,
+          "question": "What is a Hypervisor?"
+        },
+        {
+          "question_number": 4,
+          "question": "What are the types of hypervisors?"
+        },
+        {
+          "question_number": 5,
+          "question": "What is VMware ESXi?"
+        },
+        {
+          "question_number": 6,
+          "question": "What is vCenter Server?"
+        },
+        {
+          "question_number": 7,
+          "question": "Can ESXi work without vCenter?"
+        },
+        {
+          "question_number": 8,
+          "question": "What is the difference between ESXi and vCenter?"
+        },
+        {
+          "question_number": 9,
+          "question": "What file extension does a VMware virtual disk use?"
+        },
+        {
+          "question_number": 10,
+          "question": "What is the file extension of a VM configuration file?"
+        },
+        {
+          "question_number": 11,
+          "question": "What is vMotion?"
+        },
+        {
+          "question_number": 12,
+          "question": "What are the basic requirements for vMotion?"
+        },
+        {
+          "question_number": 13,
+          "question": "What is Storage vMotion?"
+        },
+        {
+          "question_number": 14,
+          "question": "What is the difference between vMotion and Storage vMotion?"
+        },
+        {
+          "question_number": 15,
+          "question": "What is High Availability (HA)?"
+        },
+        {
+          "question_number": 16,
+          "question": "What is Distributed Resource Scheduler (DRS)?"
+        },
+        {
+          "question_number": 17,
+          "question": "What is a datastore?"
+        },
+        {
+          "question_number": 18,
+          "question": "What is VMFS?"
+        },
+        {
+          "question_number": 19,
+          "question": "What is the difference between Thick Provisioning and Thin Provisioning?"
+        },
+        {
+          "question_number": 20,
+          "question": "What is a VMware snapshot?"
+        },
+        {
+          "question_number": 21,
+          "question": "Can snapshots replace backups?"
+        },
+        {
+          "question_number": 22,
+          "question": "What happens if snapshots remain for a long time?"
+        },
+        {
+          "question_number": 23,
+          "question": "What is the difference between a Standard Switch and a Distributed Switch?"
+        },
+        {
+          "question_number": 24,
+          "question": "What are Port Groups?"
+        },
+        {
+          "question_number": 25,
+          "question": "What is the difference between local storage and shared storage?"
+        },
+        {
+          "question_number": 26,
+          "question": "What are the different types of shared storage?"
+        },
+        {
+          "question_number": 27,
+          "question": "What is Multipathing?"
+        },
+        {
+          "question_number": 28,
+          "question": "What command do you use to check multipathing in Linux?"
+        },
+        {
+          "question_number": 29,
+          "question": "What is the difference between HA and FT?"
+        },
+        {
+          "question_number": 30,
+          "question": "Walk me through the process of putting an ESXi host into Maintenance Mode."
+        }
+      ]
+    }
+  ],
+
+  "completion_message": "Excellent work! Continue improving your VMware Virtualization knowledge."
 }
+
