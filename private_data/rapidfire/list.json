@@ -6,5 +6,9 @@
     {
         "name": "Rapid fire 2 - VMware",
         "file": "rapidfire2.json"
+    },
+    {
+        "name": "Rapid fire 3 - AWS (Amazon Web services)",
+        "file": "rapidfire3.json"
     }
 ]
