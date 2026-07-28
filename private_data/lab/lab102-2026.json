@@ -16,7 +16,7 @@
             "Terminate the instances to avoid unnecessary charges"
         ]
     },
-    "questions": [
+    "tasks": [
         {
             "task_number": 1,
             "title": "Login to AWS Management Console",
