@@ -1,0 +1,332 @@
+{
+  "rapidfire_id": "rapidfire3",
+  "title": "Rapidfire 3 - AWS (Amazon Web Services)",
+  "description": "AWS Infrastructure Rapid Fire Questions",
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Fundamentals of AWS",
+      "questions": [
+        {
+          "question_number": 1,
+          "question": "What is Cloud?"
+        },
+        {
+          "question_number": 2,
+          "question": "What is the difference between traditional data centers and AWS cloud infrastructure?"
+        },
+        {
+          "question_number": 3,
+          "question": "What are the main components of AWS Global Infrastructure?"
+        },
+        {
+          "question_number": 4,
+          "question": "What factors should be considered when selecting an AWS Region?"
+        },
+        {
+          "question_number": 5,
+          "question": "Why does AWS use multiple Availability Zones?"
+        },
+        {
+          "question_number": 6,
+          "question": "What is difference between AWS Region and Availability Zone?"
+        },
+        {
+          "question_number": 7,
+          "question": "What is edge location Edge location?"
+        },
+        {
+          "question_number": 8,
+          "question": "What is the difference between an Edge Location and an Availability Zone?"
+        },
+        {
+          "question_number": 9,
+          "question": "What is the difference between scalability and elasticity?"
+        },
+        {
+          "question_number": 10,
+          "question": "What is difference between vertical scaling and horizontal scaling?"
+        },
+        {
+          "question_number": 11,
+          "question": "What is the difference between High Availability and fault tolerance?"
+        },
+        {
+          "question_number": 12,
+          "question": "What is disaster recovery?"
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "AWS Computing Models & Deployment Models",
+      "questions": [
+        {
+          "question_number": 13,
+          "question": "What are cloud computing models?"
+        },
+        {
+          "question_number": 14,
+          "question": "What are the three main cloud service models?"
+        },
+        {
+          "question_number": 15,
+          "question": "What is difference between IaaS and PaaS?"
+        },
+        {
+          "question_number": 16,
+          "question": "What is difference between PaaS and SaaS?"
+        },
+        {
+          "question_number": 17,
+          "question": "What are major cloud deployment models?"
+        },
+        {
+          "question_number": 18,
+          "question": "What is difference between public and private cloud?"
+        },
+        {
+          "question_number": 19,
+          "question": "Why do organizations adopt Hybrid Cloud strategies?"
+        },
+        {
+          "question_number": 20,
+          "question": "What is Vendor Lock-in?"
+        },
+        {
+          "question_number": 21,
+          "question": "How can organizations reduce Vendor Lock-in?"
+        },
+        {
+          "question_number": 22,
+          "question": "What is the difference between AWS VPN and Direct Connect?"
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Amazon EC2 (Elastic Compute Cloud)",
+      "questions": [
+        {
+          "question_number": 23,
+          "question": "What is Amazon EC2?"
+        },
+        {
+          "question_number": 24,
+          "question": "What are the different EC2 instance types?"
+        },
+        {
+          "question_number": 25,
+          "question": "What are the diverse EC2 options offered by AWS?"
+        },
+        {
+          "question_number": 26,
+          "question": "What is an Amazon Machine Image (AMI)?"
+        },
+        {
+          "question_number": 27,
+          "question": "What is the difference between an AMI and an EC2 instance?"
+        },
+        {
+          "question_number": 28,
+          "question": "What are On-Demand Instances?"
+        },
+        {
+          "question_number": 29,
+          "question": "What are Reserved Instances?"
+        },
+        {
+          "question_number": 30,
+          "question": "What are Spot Instances?"
+        },
+        {
+          "question_number": 31,
+          "question": "What are Dedicated Hosts?"
+        },
+        {
+          "question_number": 32,
+          "question": "How do you connect to a Linux EC2 instance?"
+        },
+        {
+          "question_number": 33,
+          "question": "What is the difference between Stop and Terminate of EC2 instance?"
+        },
+        {
+          "question_number": 34,
+          "question": "What are Security Groups?"
+        },
+        {
+          "question_number": 35,
+          "question": "What is difference between a Security Group and NACL?"
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "AWS IAM (Users and Roles)",
+      "questions": [
+        {
+          "question_number": 36,
+          "question": "What is IAM?"
+        },
+        {
+          "question_number": 37,
+          "question": "Can you identify the key components of IAM in AWS?"
+        },
+        {
+          "question_number": 38,
+          "question": "Why is an IAM role necessary?"
+        },
+        {
+          "question_number": 39,
+          "question": "What sets IAM roles apart from policies?"
+        },
+        {
+          "question_number": 40,
+          "question": "Explain the concept of MFA in IAM."
+        },
+        {
+          "question_number": 41,
+          "question": "What is the Principle of Least Privilege?"
+        },
+        {
+          "question_number": 42,
+          "question": "What is Multi-Factor Authentication (MFA)?"
+        },
+        {
+          "question_number": 43,
+          "question": "What is the difference between an IAM User and an IAM Role?"
+        },
+        {
+          "question_number": 44,
+          "question": "What is the difference between an IAM Role and Policy?"
+        },
+        {
+          "question_number": 45,
+          "question": "What are AWS Managed Policies?"
+        },
+        {
+          "question_number": 46,
+          "question": "What is difference between authentication and authorization?"
+        },
+        {
+          "question_number": 47,
+          "question": "How does an EC2 instance access S3 securely?"
+        }
+      ]
+    },
+    {
+      "section_number": 5,
+      "title": "Amazon EBS (Elastic Block Store)",
+      "questions": [
+        {
+          "question_number": 48,
+          "question": "What is Amazon EBS?"
+        },
+        {
+          "question_number": 49,
+          "question": "What are the different EBS volume types?"
+        },
+        {
+          "question_number": 50,
+          "question": "What is gp3 storage?"
+        },
+        {
+          "question_number": 51,
+          "question": "Can an EBS volume be attached to multiple EC2 instances?"
+        },
+        {
+          "question_number": 52,
+          "question": "Can you increase the size of an EBS volume?"
+        },
+        {
+          "question_number": 53,
+          "question": "What happens when an EC2 instance is terminated?"
+        },
+        {
+          "question_number": 54,
+          "question": "What is an EBS Snapshot?"
+        },
+        {
+          "question_number": 55,
+          "question": "How do you restore an EBS volume from a snapshot?"
+        },
+        {
+          "question_number": 56,
+          "question": "What is the difference between Amazon EBS and EFS?"
+        },
+        {
+          "question_number": 57,
+          "question": "Can snapshots be copied across Regions?"
+         }
+       ]
+     },
+     {
+      "section_number": 6,
+      "title": "Amazon S3 (Simple Storage Service)",
+      "questions": [
+        {
+          "question_number": 58,
+          "question": "What is Amazon S3?"
+        },
+        {
+          "question_number": 59,
+          "question": "What type of storage is S3?"
+        },
+        {
+          "question_number": 60,
+          "question": "What is the difference between Amazon EBS and S3 storage?"
+        },
+        {
+          "question_number": 61,
+          "question": "What is the difference between S3 Bucket and S3 Object?"
+        },
+        {
+          "question_number": 62,
+          "question": "What is Bucket Policy?"
+        },
+        {
+          "question_number": 63,
+          "question": "What is the difference between a Bucket Policy and an IAM Policy?"
+        },
+        {
+          "question_number": 64,
+          "question": "What are S3 Storage Classes?"
+        },
+        {
+          "question_number": 65,
+          "question": "What is the difference between S3 Standard and S3 Glacier?"
+        },
+        {
+          "question_number": 66,
+          "question": "What is S3 Intelligent-Tiering?"
+        },
+        {
+          "question_number": 67,
+          "question": "What is S3 Glacier Deep Archive?"
+        },
+        {
+          "question_number": 68,
+          "question": "What is Versioning?"
+        },
+        {
+          "question_number": 69,
+          "question": "What is Cross-Region Replication?"
+        },
+        {
+          "question_number": 70,
+          "question": "What is the difference between Server-Side Encryption and Client-Side Encryption?"
+        },
+        {
+          "question_number": 71,
+          "question": "Can S3 host a static website?"
+        },
+        {
+          "question_number": 72,
+          "question": "What is Object Lock?"
+        }
+      ]
+    }
+  ],
+  "completion_message": "Excellent work! Continue learning AWS skills."
+}
