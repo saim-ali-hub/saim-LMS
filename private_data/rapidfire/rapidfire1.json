@@ -1,20 +1,3 @@
-[
-    {
-        "name": "Rapid fire 1 - Hardware, Out-of-Band Mgt Port, RAID",
-        "file": "rapidfire1.json"
-    },
-    {
-        "name": "Rapid fire 2 - VMware",
-        "file": "rapidfire2.json"
-    },
-    {
-        "name": "Rapid fire 3 - AWS (Amazon Web services)",
-        "file": "rapidfire3.json"
-    }
-
-]
-[root@saim-LMS rapidfire]#
-[root@saim-LMS rapidfire]# cat rapidfire1.json
 {
   "rapidfire_id": "rapidfire1",
   "title": "Rapid Fire 1 - Server Hardware & Infrastructure",
