@@ -1,34 +1,162 @@
+[
+    {
+        "name": "Rapid fire 1 - Hardware, Out-of-Band Mgt Port, RAID",
+        "file": "rapidfire1.json"
+    },
+    {
+        "name": "Rapid fire 2 - VMware",
+        "file": "rapidfire2.json"
+    },
+    {
+        "name": "Rapid fire 3 - AWS (Amazon Web services)",
+        "file": "rapidfire3.json"
+    }
+
+]
+[root@saim-LMS rapidfire]#
+[root@saim-LMS rapidfire]# cat rapidfire1.json
 {
-    "title": "Server Hardware & Infrastructure Questions",
-    "description": "Server Hardware, BIOS, Networking, RAID, Storage, and Data Center Interview Questions",
-    "questions": [
-        "What is BIOS and what are its main functions in a server?",
-        "What happens during POST (Power-On Self-Test)?",
-        "What is the purpose of PCIe slots in a server?",
-        "What is a hot-swappable component?",
-        "What is a MAC address?",
-        "What is the purpose of a MAC address?",
-        "What is an IP address?",
-        "What is the difference between an IP address and a MAC address?",
-        "What is out-of-band management and why is it important?",
-        "What are iDRAC and iLO?",
-        "What are the key steps to configure iDRAC?",
-        "How would you access a server if the operating system is down?",
-        "Why do servers have dual power supplies?",
-        "Do you have experience with rack and stack of servers?",
-        "What are the steps involved in the rack and stack process?",
-        "What is a KVM switch and what is its purpose?",
-        "You have 8 physical disks of different sizes—how can you combine them into one logical storage unit?",
-        "What is RAID and why is it used in servers?",
-        "What are the advantages of combining multiple disks into one logical volume?",
-        "What are the disadvantages of combining multiple disks into one logical unit?",
-        "Explain RAID 0, RAID 1, RAID 5, RAID 6, and RAID 10.",
-        "Which RAID level provides the best performance and which provides the best redundancy?",
-        "Which RAID level would you choose for critical database servers and why?",
-        "What happens when a disk fails in RAID 5 or RAID 6?",
-        "What is a RAID controller card and why is it used?",
-        "What is the difference between hardware RAID and software RAID?",
-        "How does RAID affect performance and capacity?",
-        "How does RAID improve fault tolerance?"
-    ]
+  "rapidfire_id": "rapidfire1",
+  "title": "Rapid Fire 1 - Server Hardware & Infrastructure",
+  "description": "Server Hardware, BIOS, Networking, RAID, Storage, and Data Center Questions",
+
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Server Hardware & BIOS",
+      "questions": [
+        {
+          "question_number": 1,
+          "question": "What is BIOS and what are its main functions in a server?"
+        },
+        {
+          "question_number": 2,
+          "question": "What happens during POST (Power-On Self-Test)?"
+        },
+        {
+          "question_number": 3,
+          "question": "What is the purpose of PCIe slots in a server?"
+        },
+        {
+          "question_number": 4,
+          "question": "What is a hot-swappable component?"
+        }
+      ]
+     },
+     {
+      "section_number": 2,
+      "title": "Networking & Out-of-Band Management Ports",
+      "questions": [
+        {
+          "question_number": 5,
+          "question": "What is a MAC address?"
+        },
+        {
+          "question_number": 6,
+          "question": "What is the purpose of a MAC address?"
+        },
+        {
+          "question_number": 7,
+          "question": "What is an IP address?"
+        },
+        {
+          "question_number": 8,
+          "question": "What is the difference between an IP address and a MAC address?"
+        },
+        {
+          "question_number": 9,
+          "question": "What is out-of-band management and why is it important?"
+        },
+        {
+          "question_number": 10,
+          "question": "What are iDRAC and iLO?"
+        },
+        {
+          "question_number": 11,
+          "question": "What are the key steps to configure iDRAC?"
+        },
+        {
+          "question_number": 12,
+          "question": "How would you access a server if the operating system is down?"
+        }
+       ]
+      },
+      {
+      "section_number": 3,
+      "title": "Power & Data Center Operations",
+      "questions": [
+        {
+          "question_number": 13,
+          "question": "Why do servers have dual power supplies?"
+        },
+        {
+          "question_number": 14,
+          "question": "Do you have experience with rack and stack of servers?"
+        },
+        {
+          "question_number": 15,
+          "question": "What are the steps involved in the rack and stack process?"
+        },
+        {
+          "question_number": 16,
+          "question": "What is a KVM switch and what is its purpose?"
+        }
+       ]
+      },
+      {
+      "section_number": 4,
+      "title": "Storage, RAID & Disks",
+      "questions": [
+        {
+          "question_number": 17,
+          "question": "You have 8 physical disks of different sizes—how can you combine them into one logical storage unit?"
+        },
+        {
+          "question_number": 18,
+          "question": "What is RAID and why is it used in servers?"
+        },
+        {
+          "question_number": 19,
+          "question": "What are the advantages of combining multiple disks into one logical volume?"
+        },
+        {
+          "question_number": 20,
+          "question": "What are the disadvantages of combining multiple disks into one logical unit?"
+        },
+        {
+          "question_number": 21,
+          "question": "Explain RAID 0, RAID 1, RAID 5, RAID 6, and RAID 10."
+        },
+        {
+          "question_number": 22,
+          "question": "Which RAID level provides the best performance and which provides the best redundancy?"
+        },
+        {
+          "question_number": 23,
+          "question": "Which RAID level would you choose for critical database servers and why?"
+        },
+        {
+          "question_number": 24,
+          "question": "What happens when a disk fails in RAID 5 or RAID 6?"
+        },
+        {
+          "question_number": 25,
+          "question": "What is a RAID controller card and why is it used?"
+        },
+        {
+          "question_number": 26,
+          "question": "What is the difference between hardware RAID and software RAID?"
+        },
+        {
+          "question_number": 27,
+          "question": "How does RAID affect performance and capacity?"
+        },
+        {
+          "question_number": 28,
+          "question": "How does RAID improve fault tolerance?"
+        }
+      ]
+    }
+  ],
+  "completion_message": "Excellent work! Continue learning AWS skills."
 }
