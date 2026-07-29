@@ -14,19 +14,11 @@ SHOW WORK AREA
 ========================= */
 function showWorkArea() {
 
-      const welcome =
-            document.querySelector(".welcome-title");
+    document.getElementById("landingPage").style.display = "none";
 
-      const workArea =
-            document.querySelector(".work-area");
+    const work = document.getElementById("work-area");
 
-      if (welcome) {
-           welcome.style.display = "none";
-      }
-
-      if (workArea) {
-           workArea.style.display = "flex";
-      }
+    work.style.display = "flex";
 }
 
 /* =========================
@@ -203,8 +195,6 @@ function openItem(section, file) {
 
                 AppState.currentLabState = AppState.labStateMap[file];
 
-                document.querySelector(".welcome-title").style.display = "none";
-                document.querySelector(".work-area").style.display = "flex";
 
                 setTimeout(() => renderLabQuestions(), 0);
              }
@@ -221,8 +211,6 @@ function openItem(section, file) {
                     status: {}
                 };
 
-               document.querySelector(".welcome-title").style.display = "none";
-               document.querySelector(".work-area").style.display = "flex";
 
                 setTimeout(() => renderRapidfireQuestions(), 0);
             }
@@ -238,8 +226,6 @@ function openItem(section, file) {
                     status: {}
                 };
 
-               document.querySelector(".welcome-title").style.display = "none";
-               document.querySelector(".work-area").style.display = "flex";
 
                setTimeout(() => renderEvaluationQuestions(), 0);
             }
