@@ -33,10 +33,10 @@
       "title": "Create 'Support Team' Group",
 
       "steps": [
-        "Create a new group named Support Team",
-        "Attach 'AmazonEC2ReadOnlyAccess' policy to 'Support Team' group",
+        "Create a new group named SupportTeam",
+        "Attach 'AmazonEC2ReadOnlyAccess' policy to 'SupportTeam' group",
         "Create user 'support1'",
-        "Assign user 'support1' to 'Support Team' group"
+        "Assign user 'support1' to 'SupportTeam' group"
       ]
     },
 
@@ -85,7 +85,7 @@
           "steps": [
              " create user 'backupadmin1' and Without creating a new policy manage this user's permissions",
              "permissions required - 1) Full S3 Access, 2) Read-only EC2, 3) No IAM access",
-             "Hint - Use an existing AWS managed policy. Remember 'backupadmin1' is a member of 'interns' group"
+             "Hint - Use an existing AWS managed policy. Remember 'backupadmin1' is a member of 'backupadmins' group"
           ]
         }
       ],
