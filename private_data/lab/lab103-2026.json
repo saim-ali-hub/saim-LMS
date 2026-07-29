@@ -10,9 +10,9 @@
   "scenario": "Your company has hired three new employees. As the AWS Administrator, your task is to create the required users, groups, and permissions.",
 
   "employees": [
-    "John - Linux Team - EC2 Administrator",
-    "Sarah - Storage Team - S3 Administrator",
-    "David - Audit Team - Read-only Auditor"
+    "john - LinuxAdmin - Linux Team - EC2 Administrator",
+    "sarah - StorageAdmin - Storage Team - S3 Administrator",
+    "david - Auditor - Audit Team - Read-only Auditor"
   ],
 
   "prerequisites": [
@@ -38,6 +38,7 @@
       "task_number": 1,
       "title": "Login to AWS Console",
       "steps": [
+        "Open your browser",
         "Login to AWS Console using the Root account."
       ]
     },
@@ -55,7 +56,7 @@
       "task_number": 3,
       "title": "Create IAM Groups",
       "steps": [
-        "create three IAM groups - 'Linux Admins' 'Storage Admins', and 'Auditors'",
+        "create three IAM groups - 'LinuxAdmins' 'StorageAdmins', and 'Auditors'",
         "Verify all groups appear under IAM User Groups"
       ]
     },
@@ -77,8 +78,8 @@
       "task_number": 5,
       "title": "Add Users to Groups",
       "steps": [
-         "Add user 'john' to 'Linux Admins' group",
-         "Add user 'sarah' to 'Storage Admins' group",
+         "Add user 'john' to 'LinuxAdmins' group",
+         "Add user 'sarah' to 'StorageAdmins' group",
          "Add user 'david' to 'Auditors' group",
          "Verify each user belongs to the correct group."
       ]
@@ -88,9 +89,9 @@
       "task_number": 6,
       "title": "Attach AWS Managed Policies",
       "steps": [
-        "Attach 'AmazonEC2FullAccess' policy to 'Linux Admins' group",
-        "Attach 'AmazonS3FullAcces' policy to 'Storage Admins' group",
-        "Attach 'AmazonEC2FullAccess' policy to 'Linux Admins' group",
+        "Attach 'AmazonEC2FullAccess' policy to 'LinuxAdmins' group",
+        "Attach 'AmazonS3FullAcces' policy to 'StorageAdmins' group",
+        "Attach 'AmazonEC2FullAccess' policy to 'LinuxAdmins' group",
         "Do not attach policies directly to users. Use groups only."
       ]
     },
@@ -139,7 +140,7 @@
       "task_number": 10,
       "title": "Modify Group Membership I",
       "steps": [
-          "Remove user John from Linux Admins group",
+          "Remove user john from LinuxAdmins group",
           "Login again and attempt to Launch an EC2 Instance",
           "Observe the result"
         ]
@@ -150,11 +151,10 @@
        "task_number": 11,
        "title": "Modify Group Membership II",
        "steps": [
-          "Add user John back to Linux Admins group",
+          "Add user john back to LinuxAdmins group",
           "Login again and verify EC2 access has been restored"
         ]
       }
   ],
  "completion_message": "Excellent work! Continue practicing to strengthen your AWS skills."
 }
-
