@@ -50,7 +50,7 @@
             "steps": [
                 "Click on Launch Instance and choose following",
                 "Name - myweb01",
-                "AMI - Red Hat Enterprise Linux 9",
+                "AMI - Amazon Linux 2023",
                 "Architecture - 64-bit (x86)",
                 "Instance Type - t3.micro"
             ]
