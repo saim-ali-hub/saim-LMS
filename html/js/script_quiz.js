@@ -35,21 +35,25 @@ function loadQuizSection() {
                 heading.innerHTML = "▶ " + category;
 
                 // Quiz list
-                const list = document.createElement("div");
+                const list = document.createElement("ul");
                 list.className = "category-items";
                 list.style.display = "none";
 
                 groups[category].forEach(item => {
 
-                    let btn = document.createElement("button");
+                    const li = document.createElement("li");
+                    li.className = "category-item";
 
-                    btn.innerText = item.name;
+                    li.innerHTML = `
+                        <span class="item-icon">📘</span>
+                        ${item.name}
+                    `;
 
-                    btn.onclick = function () {
+                    li.onclick = function () {
                         openItem("quiz", item.file);
                     };
 
-                    list.appendChild(btn);
+                    list.appendChild(li);
 
                 });
 
@@ -79,6 +83,7 @@ function loadQuizSection() {
         });
 
 }
+
 /* =========================
    RENDER QUESTION LIST
 ========================= */
