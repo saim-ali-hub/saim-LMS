@@ -1,8 +1,8 @@
 /* =========================
-   LOAD SECTION
+   LOAD QUIZ SECTION
 ========================= */
-
 function loadQuizSection() {
+
     fetch(`get_item.php?section=quiz&file=list.json`)
         .then(res => res.json())
         .then(data => {
@@ -10,19 +10,75 @@ function loadQuizSection() {
             let itemList = document.getElementById("itemList");
             itemList.innerHTML = "";
 
+            const groups = {};
+
             data.forEach(item => {
-                let li = document.createElement("li");
-                li.innerHTML = `
-                    <button onclick="openItem('quiz','${item.file}')">
-                        ${item.name}
-                    </button>
-                `;
-                itemList.appendChild(li);
+
+                if (!groups[item.category]) {
+                    groups[item.category] = [];
+                }
+
+                groups[item.category].push(item);
+
             });
 
-        });
-}
+            // Create category sections
+            for (const category in groups) {
 
+                // Main container
+                const wrapper = document.createElement("div");
+                wrapper.className = "category";
+
+                // Clickable heading
+                const heading = document.createElement("div");
+                heading.className = "category-heading";
+                heading.innerHTML = "▶ " + category;
+
+                // Quiz list
+                const list = document.createElement("div");
+                list.className = "category-items";
+                list.style.display = "none";
+
+                groups[category].forEach(item => {
+
+                    let btn = document.createElement("button");
+
+                    btn.innerText = item.name;
+
+                    btn.onclick = function () {
+                        openItem("quiz", item.file);
+                    };
+
+                    list.appendChild(btn);
+
+                });
+
+                heading.onclick = function () {
+
+                    if (list.style.display === "none") {
+
+                        list.style.display = "block";
+                        heading.innerHTML = "▼ " + category;
+
+                    } else {
+
+                        list.style.display = "none";
+                        heading.innerHTML = "▶ " + category;
+
+                    }
+
+                };
+
+                wrapper.appendChild(heading);
+                wrapper.appendChild(list);
+
+                itemList.appendChild(wrapper);
+
+            }
+
+        });
+
+}
 /* =========================
    RENDER QUESTION LIST
 ========================= */
