@@ -50,23 +50,28 @@ function loadRapidfireSection() {
                 heading.innerHTML = "▶ " + category;
 
                 // Rapid Fire list
-                const list = document.createElement("div");
+                const list = document.createElement("ul");
                 list.className = "category-items";
                 list.style.display = "none";
 
                 groups[category].forEach(item => {
 
-                    const btn = document.createElement("button");
+                    const li = document.createElement("li");
+                    li.className = "category-item";
 
-                    btn.innerText = item.name;
+                    li.innerHTML = `
+                        <span class="item-icon">⚡ </span>
+                        ${item.name}
+                    `;
 
-                    btn.onclick = function () {
+                    li.onclick = function () {
                         openItem("rapidfire", item.file);
                     };
 
-                    list.appendChild(btn);
+                    list.appendChild(li);
 
                 });
+
 
                 heading.onclick = function () {
 
@@ -102,6 +107,7 @@ function loadRapidfireSection() {
         });
 
 }
+
 /* RENDER QUESTIONS (READ ONLY) */
 function renderRapidfireQuestions() {
 
