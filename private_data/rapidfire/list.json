@@ -1,14 +1,18 @@
 [
     {
-        "name": "Rapid fire 1 - Hardware, Out-of-Band Mgt Port, RAID",
+        "category": "Hardware",
+        "name": "Rapid Fire 1 - Linux",
         "file": "rapidfire1.json"
     },
     {
-        "name": "Rapid fire 2 - VMware",
+        "category": "VMware",
+        "name": "Rapid Fire 2 - VMware",
         "file": "rapidfire2.json"
     },
     {
-        "name": "Rapid fire 3 - AWS (Amazon Web services)",
+        "category": "Amazon Web Services",
+        "name": "Rapid Fire 3 - AWS",
         "file": "rapidfire3.json"
     }
 ]
+
