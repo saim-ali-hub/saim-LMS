@@ -12,7 +12,7 @@
   "employees": [
     "john - LinuxAdmin - Linux Team - EC2 Administrator",
     "sarah - StorageAdmin - Storage Team - S3 Administrator",
-    "david - Auditor - Audit Team - Read-only Auditor"
+    "david - Auditor - Audit Team - S3 Read-only Auditor"
   ],
 
   "prerequisites": [
@@ -67,7 +67,6 @@
       "steps": [
         "create three users - 'john' 'sarah', and 'david'",
         "Select Provide user access to the AWS Management Console",
-        "During user creation choose I want to create an IAM user",
         "Set a custom password (Example: Welcome@123)",
         "Enable Require password reset at the next sign-in",
         "Click Next to continue"
@@ -91,7 +90,7 @@
       "steps": [
         "Attach 'AmazonEC2FullAccess' policy to 'LinuxAdmins' group",
         "Attach 'AmazonS3FullAcces' policy to 'StorageAdmins' group",
-        "Attach 'AmazonEC2FullAccess' policy to 'LinuxAdmins' group",
+        "Attach 'AmazonS3ReadOnlyAccess' policy to 'Auditors' group",
         "Do not attach policies directly to users. Use groups only."
       ]
     },
