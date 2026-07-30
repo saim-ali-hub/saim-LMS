@@ -45,31 +45,35 @@ function loadRecordingSection() {
                 heading.className = "category-heading";
                 heading.innerHTML = "▶ " + category;
 
-                // Recording list
-                const list = document.createElement("div");
+                // Quiz list
+                const list = document.createElement("ul");
                 list.className = "category-items";
                 list.style.display = "none";
 
-                groups[category].forEach(recording => {
+                groups[category].forEach(item => {
 
-                    console.log("Recording:", recording);
+                    const li = document.createElement("li");
+                    li.className = "category-item";
 
-                    const btn = document.createElement("button");
+                    li.innerHTML = `
+                        <span class="item-icon">🎥 </span>
+                        ${item.name}
+                    `;
 
-                    btn.innerText = recording.name;
+                    function openRecording(url) {
+                       window.open(url, "_blank", "noopener,noreferrer");
+                    }
 
-                    console.log("Button text:", btn.innerText);
+                    window.openRecording = openRecording;
 
-                    btn.onclick = function () {
-                        openRecording(recording.url);
+                    li.onclick = function () {
+                        openRecording(item.url);
                     };
 
-                    list.appendChild(btn);
+                    list.appendChild(li);
 
                 });
 
-                console.log("List element:", list);
-                console.log("Buttons inside list:", list.querySelectorAll("button").length);
 
                 heading.onclick = function () {
 
