@@ -50,21 +50,25 @@ function loadLabSection() {
                 heading.innerHTML = "▶ " + category;
 
                 // Lab list
-                const list = document.createElement("div");
+                const list = document.createElement("ul");
                 list.className = "category-items";
                 list.style.display = "none";
 
                 groups[category].forEach(item => {
 
-                    let btn = document.createElement("button");
+                    const li = document.createElement("li");
+                    li.className = "category-item";
 
-                    btn.innerText = item.name;
+                    li.innerHTML = `
+                        <span class="item-icon">🧪</span>
+                        ${item.name}
+                    `;
 
-                    btn.onclick = function () {
+                    li.onclick = function () {
                         openItem("lab", item.file);
                     };
 
-                    list.appendChild(btn);
+                    list.appendChild(li);
 
                 });
 
@@ -119,51 +123,124 @@ function renderLabQuestions() {
     }
 
     let html = `
-        <div class="question-box">
+    <div class="question-box">
 
-        <h2 style="color:#000080;">${data.title || "Lab"}</h2>
-        <h2 style="color:#000080;">
-        ${escapeHtml(data.description || "")}
-        </h2>
+    <h2 style="color:#000080;">${data.title || "Lab"}</h2>
 
-        ${
-        data.lab_objective
+    <h2 style="color:#000080;">
+    ${escapeHtml(data.description || "")}
+    </h2>
 
-        ?
+    ${
+    data.lab_objective
+    ?
+    `
 
-        `
+    <div style="background:#e0f2fe;color:#0f172a;padding:15px;border-radius:8px;margin-bottom:20px;">
 
-        <div style="background:#e0f2fe;color:#0f172a;padding:15px;border-radius:8px;margin-bottom:20px;">
+    <h3>
+    ${escapeHtml(data.lab_objective.description || "")}
+    </h3>
 
-        <h3>
-        ${escapeHtml(data.lab_objective.description)}
-        </h3>
 
-        <ul>
+    ${
+    Array.isArray(data.lab_objective.objectives)
 
-        ${
-        (data.lab_objective.objectives || [])
-        .map(obj =>
-        `
-        <li>${escapeHtml(obj)}</li>
-        `
-        )
-        .join("")
-        }
+    ?
 
-        </ul>
+    `
+    <ul>
 
-        </div>
+    ${
+    data.lab_objective.objectives.map(obj =>
+    `
+    <li>${escapeHtml(obj)}</li>
+    `
+    ).join("")
+    }
 
-        `
+    </ul>
+    `
 
-        :
+    :
 
-        ""
+    ""
 
-        }
+    }
 
-    `;
+
+    </div>
+
+    `
+
+    :
+
+    ""
+
+    }
+
+
+    ${
+    data.lab_objective && data.lab_objective.scenario
+
+    ?
+
+    `
+
+    <div style="background:#fef3c7;color:#000;padding:15px;border-radius:8px;margin-bottom:20px;">
+
+    <h3>Scenario</h3>
+
+    <p>
+    ${escapeHtml(data.lab_objective.scenario)}
+    </p>
+
+    </div>
+
+    `
+
+    :
+
+    ""
+
+    }
+
+
+    ${
+    data.lab_objective && Array.isArray(data.lab_objective.employees)
+
+    ?
+
+    `
+
+    <div style="background:#dcfce7;color:#000;padding:15px;border-radius:8px;margin-bottom:20px;">
+
+    <h3>Employees</h3>
+
+    <ul>
+
+    ${
+    data.lab_objective.employees.map(emp =>
+    `
+    <li>${escapeHtml(emp)}</li>
+    `
+    ).join("")
+    }
+
+    </ul>
+
+    </div>
+
+    `
+
+    :
+
+    ""
+
+    }
+
+`;
+
 
     if (Array.isArray(data.commands_covered)) {
         html += `
@@ -174,7 +251,7 @@ function renderLabQuestions() {
         `;
     }
 
-    (data.questions || []).forEach((q, index) => {
+    (data.questions || data.tasks || []).forEach((q, index) => {
         let status = state[index] || "";
         let borderColor =
             status === "done" ? "#22c55e" :
