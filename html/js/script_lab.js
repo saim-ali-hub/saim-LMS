@@ -1,16 +1,12 @@
 /* =========================
-   LAB MODULE (FINAL VERSION)
-   SAFE GLOBAL STATE VERSION
-========================= */
-
-/* =========================
    LOAD LAB SECTION
 ========================= */
 function loadLabSection() {
+
     const itemList = document.getElementById("itemList");
 
     if (!itemList) {
-        console.error("itemList not found ");
+        console.error("itemList not found");
         return;
     }
 
@@ -27,28 +23,86 @@ function loadLabSection() {
 
             itemList.innerHTML = "";
 
+            const groups = {};
+
             data.forEach(item => {
 
                 if (!item.file || !item.name) return;
 
-                const li = document.createElement("li");
-                const btn = document.createElement("button");
-                btn.textContent = item.name;
+                if (!groups[item.category]) {
+                    groups[item.category] = [];
+                }
 
-                btn.onclick = () => {
-                    openItem("lab", item.file);
+                groups[item.category].push(item);
+
+            });
+
+            // Create category sections
+            for (const category in groups) {
+
+                // Main container
+                const wrapper = document.createElement("div");
+                wrapper.className = "category";
+
+                // Clickable heading
+                const heading = document.createElement("div");
+                heading.className = "category-heading";
+                heading.innerHTML = "▶ " + category;
+
+                // Lab list
+                const list = document.createElement("div");
+                list.className = "category-items";
+                list.style.display = "none";
+
+                groups[category].forEach(item => {
+
+                    let btn = document.createElement("button");
+
+                    btn.innerText = item.name;
+
+                    btn.onclick = function () {
+                        openItem("lab", item.file);
+                    };
+
+                    list.appendChild(btn);
+
+                });
+
+                heading.onclick = function () {
+
+                    if (list.style.display === "none") {
+
+                        list.style.display = "block";
+                        heading.innerHTML = "▼ " + category;
+
+                    } else {
+
+                        list.style.display = "none";
+                        heading.innerHTML = "▶ " + category;
+
+                    }
+
                 };
 
-                li.appendChild(btn);
-                itemList.appendChild(li);
-            });
+                wrapper.appendChild(heading);
+                wrapper.appendChild(list);
+
+                itemList.appendChild(wrapper);
+
+            }
 
         })
         .catch(err => {
+
             console.error("Lab load error:", err);
-            itemList.innerHTML = "<li style='color:red;'>Error loading labs</li>";
+
+            itemList.innerHTML =
+                "<li style='color:red;'>Error loading labs</li>";
+
         });
+
 }
+
 /* =========================
    RENDER LAB QUESTIONS
 ========================= */
