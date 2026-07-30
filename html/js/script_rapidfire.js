@@ -1,47 +1,107 @@
 /* =========================
-   RAPID FIRE MODULE (READ ONLY)
+   LOAD RAPID FIRE SECTION
 ========================= */
-/* LOAD LIST */
 function loadRapidfireSection() {
 
     const itemList = document.getElementById("itemList");
 
     if (!itemList) return;
 
-    itemList.innerHTML = "<li>Loading rapidfire...</li>";
+    itemList.innerHTML = "<li>Loading Rapid Fire...</li>";
 
     fetch("get_item.php?section=rapidfire&file=list.json")
         .then(res => res.json())
         .then(data => {
 
             if (!Array.isArray(data)) {
-                itemList.innerHTML = "<li>Invalid data</li>";
+                itemList.innerHTML = "<li>Invalid Rapid Fire data</li>";
                 return;
             }
 
             itemList.innerHTML = "";
 
+            const groups = {};
+
             data.forEach(item => {
 
-                const li = document.createElement("li");
+                if (!item.file || !item.name || !item.category) {
+                    console.warn("Invalid Rapid Fire item:", item);
+                    return;
+                }
 
-                const btn = document.createElement("button");
-                btn.textContent = item.name;
+                if (!groups[item.category]) {
+                    groups[item.category] = [];
+                }
 
-                btn.onclick = () => {
-                    openItem("rapidfire", item.file);
+                groups[item.category].push(item);
+
+            });
+
+            // Create category sections
+            for (const category in groups) {
+
+                // Main container
+                const wrapper = document.createElement("div");
+                wrapper.className = "category";
+
+                // Clickable heading
+                const heading = document.createElement("div");
+                heading.className = "category-heading";
+                heading.innerHTML = "▶ " + category;
+
+                // Rapid Fire list
+                const list = document.createElement("div");
+                list.className = "category-items";
+                list.style.display = "none";
+
+                groups[category].forEach(item => {
+
+                    const btn = document.createElement("button");
+
+                    btn.innerText = item.name;
+
+                    btn.onclick = function () {
+                        openItem("rapidfire", item.file);
+                    };
+
+                    list.appendChild(btn);
+
+                });
+
+                heading.onclick = function () {
+
+                    if (list.style.display === "none") {
+
+                        list.style.display = "block";
+                        heading.innerHTML = "▼ " + category;
+
+                    } else {
+
+                        list.style.display = "none";
+                        heading.innerHTML = "▶ " + category;
+
+                    }
+
                 };
 
-                li.appendChild(btn);
-                itemList.appendChild(li);
-            });
+                wrapper.appendChild(heading);
+                wrapper.appendChild(list);
+
+                itemList.appendChild(wrapper);
+
+            }
+
         })
         .catch(err => {
-            console.error("Rapidfire load error:", err);
-            itemList.innerHTML = "<li style='color:red;'>Error loading rapidfire</li>";
-        });
-}
 
+            console.error("Rapid Fire load error:", err);
+
+            itemList.innerHTML =
+                "<li style='color:red;'>Error loading Rapid Fire</li>";
+
+        });
+
+}
 /* RENDER QUESTIONS (READ ONLY) */
 function renderRapidfireQuestions() {
 
