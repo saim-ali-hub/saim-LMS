@@ -7,6 +7,8 @@ function loadRecordingSection() {
         .then(res => res.json())
         .then(data => {
 
+            console.log("Recording data:", data);
+
             const itemList = document.getElementById("itemList");
             itemList.innerHTML = "";
 
@@ -27,8 +29,12 @@ function loadRecordingSection() {
 
             });
 
+            console.log("Groups:", groups);
+
             // Create category sections
             for (const category in groups) {
+
+                console.log("Category:", category);
 
                 // Main container
                 const wrapper = document.createElement("div");
@@ -46,9 +52,13 @@ function loadRecordingSection() {
 
                 groups[category].forEach(recording => {
 
+                    console.log("Recording:", recording);
+
                     const btn = document.createElement("button");
 
                     btn.innerText = recording.name;
+
+                    console.log("Button text:", btn.innerText);
 
                     btn.onclick = function () {
                         openRecording(recording.url);
@@ -57,6 +67,9 @@ function loadRecordingSection() {
                     list.appendChild(btn);
 
                 });
+
+                console.log("List element:", list);
+                console.log("Buttons inside list:", list.querySelectorAll("button").length);
 
                 heading.onclick = function () {
 
@@ -81,6 +94,8 @@ function loadRecordingSection() {
 
             }
 
+            console.log("Final itemList:", itemList);
+
         })
         .catch(err => {
 
@@ -92,16 +107,3 @@ function loadRecordingSection() {
         });
 
 }
-
-/* =========================
-   OPEN RECORDING
-========================= */
-function openRecording(url) {
-    window.open(url, "_blank", "noopener,noreferrer");
-}
-
-/* =========================
-   EXPORT
-========================= */
-window.loadRecordingSection = loadRecordingSection;
-window.openRecording = openRecording;
