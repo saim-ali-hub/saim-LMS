@@ -10,17 +10,17 @@
         "file": "quiz2.json"
     },
     {
-        "category":"VMware",
+        "category":"Hardware & Datacenter",
         "name": "Quiz 3 - Server Hardware, BIOS, RAID & Ports",
         "file": "quiz3.json"
     },
     {
-        "category":"VMware",
+        "category":"Hardware & Datacenter",
         "name": "Quiz 4 - Racking & Stacking and iDRAC Configuration",
         "file": "quiz4.json"
     },
     {
-        "category":"VMware",
+        "category":"Hardware & Datacenter",
         "name": "Quiz 5 - Networking, BIOS & RAID",
         "file": "quiz5.json"
     },
@@ -35,33 +35,34 @@
         "file": "quiz7.json"
     },
     {
-        "category":"Amazon Web Services",
+        "category":"AWS",
         "name": "Quiz 8 – Introduction to Amazon Web Services",
         "file": "quiz8.json"
     },
     {
-        "category":"Amazon Web Services",
+        "category":"AWS",
         "name": "Quiz 9 – AWS & Amazon Web Services Computing",
         "file": "quiz9.json"
     },
     {
-        "category":"Amazon Web Services",
+        "category":"AWS",
         "name": "Quiz 10 – Hierarchy of AWS Global Infrastructure",
         "file": "quiz10.json"
     },
     {
-        "category":"Amazon Web Services",
+        "category":"AWS",
         "name": "Quiz 11 - AWS Billing, Amazon Web ServicesWatch & EC2 Fundamentals",
         "file": "quiz11.json"
     },
     {
-        "category":"Amazon Web Services",
+        "category":"AWS",
         "name": "Quiz 12 - AWS IAM & MFA",
         "file": "quiz12.json"
     },
     {
-        "category":"Amazon Web Services",
+        "category":"AWS",
         "name": "Quiz 13 - AWS S3 Storage",
         "file": "quiz13.json"
     }
 ]
+
