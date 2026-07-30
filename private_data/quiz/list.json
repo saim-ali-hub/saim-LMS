@@ -1,56 +1,67 @@
 [
-    {
+   {
+        "category":"Linux",
         "name": "Quiz 1 - Linux Basic command & Networking",
         "file": "quiz1.json"
     },
     {
+        "category":"Linux",
         "name": "Quiz 2 - Basic commands & Directory Knowledge",
         "file": "quiz2.json"
     },
     {
+        "category":"VMware",
         "name": "Quiz 3 - Server Hardware, BIOS, RAID & Ports",
         "file": "quiz3.json"
     },
     {
+        "category":"VMware",
         "name": "Quiz 4 - Racking & Stacking and iDRAC Configuration",
         "file": "quiz4.json"
     },
     {
+        "category":"VMware",
         "name": "Quiz 5 - Networking, BIOS & RAID",
         "file": "quiz5.json"
     },
     {
+        "category":"VMware",
         "name": "Quiz 6 – Linux, SSH & Virtualization",
         "file": "quiz6.json"
     },
     {
+        "category":"VMware",
         "name": "Quiz 7 – VMware Virtualization Fundamentals",
         "file": "quiz7.json"
     },
     {
-        "name": "Quiz 8 – Introduction to Cloud",
+        "category":"Amazon Web Services",
+        "name": "Quiz 8 – Introduction to Amazon Web Services",
         "file": "quiz8.json"
     },
     {
-        "name": "Quiz 9 – AWS & Cloud Computing",
+        "category":"Amazon Web Services",
+        "name": "Quiz 9 – AWS & Amazon Web Services Computing",
         "file": "quiz9.json"
     },
     {
+        "category":"Amazon Web Services",
         "name": "Quiz 10 – Hierarchy of AWS Global Infrastructure",
         "file": "quiz10.json"
     },
     {
-        "name": "Quiz 11 - AWS Billing, CloudWatch & EC2 Fundamentals",
+        "category":"Amazon Web Services",
+        "name": "Quiz 11 - AWS Billing, Amazon Web ServicesWatch & EC2 Fundamentals",
         "file": "quiz11.json"
     },
     {
+        "category":"Amazon Web Services",
         "name": "Quiz 12 - AWS IAM & MFA",
         "file": "quiz12.json"
     },
     {
+        "category":"Amazon Web Services",
         "name": "Quiz 13 - AWS S3 Storage",
         "file": "quiz13.json"
     }
 ]
-
-
