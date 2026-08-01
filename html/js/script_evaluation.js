@@ -89,12 +89,12 @@ function renderEvaluationQuestions() {
     `;
 
     const colors = [
-        "#2563eb",
-        "#16a34a",
-        "#ea580c",
-        "#7c3aed",
-        "#dc2626",
-        "#0891b2"
+        "#2563EB",
+        "#2563EB",
+        "#2563EB",
+        "#2563EB",
+        "#2563EB",
+        "#2563EB"
     ];
 
     (data.sections || []).forEach((section, secIndex) => {
@@ -195,7 +195,7 @@ function renderEvaluationQuestions() {
     html += `
 
         <div style="
-            background:#16a34a;
+            background:#065FA6;
             color:white;
             text-align:center;
             padding:20px;
