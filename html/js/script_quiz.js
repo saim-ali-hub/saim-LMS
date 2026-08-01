@@ -125,17 +125,29 @@ function renderQuestions() {
         let done = state.done[index];
 
         html += `
-            <div onclick="openQuizQuestion(${index})"
+            <div
+                onclick="openQuizQuestion(${index})"
                 style="
-                    margin-bottom:12px;
-                    padding:12px;
-                    border-radius:8px;
+                    margin-bottom:14px;
+                    padding:16px 18px;
+                    border-radius:10px;
                     cursor:pointer;
-                    color:${done ? '#1d4ed8' : '#f8fafc'};
-                    border-left:4px solid ${done ? '#22c55e' : '#38bdf8'};
-                    background:${done ? '#bbf7d0' : '#1e293b'};
+
+                    display:flex;
+                    align-items:center;
+
+                    background:${done ? '#ECFDF5' : '#EAF4FF'};
+                    color:${done ? '#166534' : '#1E293B'};
+
+                    border:1px solid ${done ? '#86EFAC' : '#E2E8F0'};
+                    border-left:6px solid ${done ? '#22C55E' : '#2563EB'};
+
+                    box-shadow:0 2px 8px rgba(0,0,0,.05);
+
+                    transition:all .25s ease;
                 ">
-                Q${index + 1}. ${q.question}
+
+                     Q${index + 1}. ${q.question}
             </div>
         `;
     });
@@ -185,7 +197,7 @@ function openQuizQuestion(index) {
             z-index:9999;
         ">
         <div style="
-            background:#0f172a;
+            background:#60A5FA;
             padding:25px;
             width:500px;
             border-radius:10px;
@@ -222,7 +234,7 @@ function openQuizQuestion(index) {
             <button onclick="closeBox()"
                 style="
                     padding:8px 15px;
-                    background:#22c55e;
+                    background:#228B22;
                     border:none;
                     color:white;
                     border-radius:5px;
